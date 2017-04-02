@@ -124,7 +124,17 @@ function collision() {
   }
   if (y + dy > canvas.height - ballRadius) {
     if(x > paddleX && x < paddleX + paddleWidth){
-        dy = -dy;
+        if(leftPressed){
+          dy = -dy;
+          dx = dx-(dx*.5);
+        }
+        else if (rightPressed) {
+          dy = -dy;
+          dx = dx+(dx*.5);
+        }
+        else {
+          dy = -dy;
+        }
     }
     else {
       lives--;
