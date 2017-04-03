@@ -91,7 +91,6 @@ function drawBricks() {
   }
 }
 
-
 function keyDownHandler(e) {
   if(e.keyCode == 39) {
     rightPressed = true;
@@ -144,7 +143,7 @@ function collision() {
     if(x > paddleX && x < paddleX + paddleWidth){
         if(leftPressed){
           dy = -dy;
-          dx = dx-(dx*.5);
+          dx = dx+(dx*.5);
         }
         else if (rightPressed) {
           dy = -dy;
@@ -194,7 +193,6 @@ function collision() {
     }
   }
 }
-
 function draw(){
   //Draw code to go here.
   ctx.clearRect(0, 0, canvas.width, canvas.height);
